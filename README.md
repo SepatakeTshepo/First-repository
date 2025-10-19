@@ -9,6 +9,8 @@ This is a simple Java console application that helps track expenses and allowanc
 - Run the program: `java Main`
 
 ## Features
-- Add fixed and variable expenses
-- Calculate remaining allowance
-- Display expense list
+- Add allowance for the month
+- Add expenses
+- Add price for each expense
+- Calculate remaining balanace
+
