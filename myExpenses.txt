@@ -1,1 +1,3 @@
-Grocery R 600
+Grocery R 700
+Clothes R 500
+Data R 250

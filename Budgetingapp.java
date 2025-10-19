@@ -54,12 +54,12 @@ try {
 
 BufferedWriter writer  = new BufferedWriter (new FileWriter ("myExpenses.txt"));
 
-for (int i = 0 ; i == items.size () ; i ++ ){
+for (int i = 0 ; i < items.size () ; i ++ ){
 
 String expensesWithPrice = items.get (i) + " R " + prices .get (i);
 writer .write (expensesWithPrice );
 writer .newLine ();
-break;
+
 
 }
 writer.close();

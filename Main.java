@@ -23,6 +23,7 @@ System.out.println (" ( 1 ) Enter my Allowance for the Month ");
 System.out.println (" ( 2 ) Enter my Expenses for the Month ");
 System.out.println (" ( 3 ) Price for each Expense ");
 System.out.println (" ( 4 ) Total Saved ");
+System.out.println (" ( 5 ) Exit ");
 
  option = scan.nextInt();
 
@@ -54,9 +55,14 @@ case 4 :
 System.out.println ("Total Saved ");
 expe.remainingBalance(mon);
 
+break;
 
+case 5 :
 
-} } while (option <= 4 );
+System.out.println ("You have Exited the program ");
+break;
+
+} } while (option <= 5);
 
 }
 
