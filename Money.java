@@ -15,7 +15,7 @@ this.allowance = allowance ;
 }
 
 void setAllowance ( ){
- System.out.println ("allowance for the month : ");
+ 
  allowance = scan.nextDouble ();
 
 }
