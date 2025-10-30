@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Money {
+public class AllowanceInfo {
 
 private double allowance = 0 ;
 

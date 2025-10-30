@@ -2,14 +2,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-abstract class Budgetingapp{
+abstract class ExpenseInfo{
 
 abstract void expenses ();
 abstract double gettotalExpenses ();
-abstract double remainingBalance (Money money);
+abstract double remainingBalance (AllowanceInfo money);
 }
 
- class Fixedexp extends Budgetingapp {
+ class Fixedexp extends ExpenseInfo {
 
 
 Scanner scan = new Scanner (System.in);
@@ -45,14 +45,9 @@ System.out.println ("Enter the price of" + a + " R : ");
 int price = scan.nextInt();
 prices.add (price );
 
-
 }
 System.out.println ();
-
-
-try {
-
-BufferedWriter writer  = new BufferedWriter (new FileWriter ("myExpenses.txt"));
+try (BufferedWriter writer  = new BufferedWriter (new FileWriter ("myExpenses.txt"));){
 
 for (int i = 0 ; i < items.size () ; i ++ ){
 
@@ -62,11 +57,11 @@ writer .newLine ();
 
 
 }
-writer.close();
+
 
 }catch (IOException e ){
 
-System.err.println ("Something went wrong with adiing prices : " + e.getMessage());
+System.err.println ("Something went wrong with adiing Expeses with Prices : " + e.getMessage());
 
 }}
 
@@ -89,18 +84,15 @@ return total ;
 
  
 @Override
-double remainingBalance(Money money){
+double remainingBalance(AllowanceInfo money){
     double remainingBalance = money.getAllowance()- gettotalExpenses();
 
-    try {
-
-    BufferedWriter writer = new BufferedWriter (new FileWriter ("Balance.txt"));
-   
+    try (BufferedWriter writer = new BufferedWriter (new FileWriter ("Balance.txt"));){
 
 System.out.println ("Remaining Balance :" + remainingBalance);
 writer.write("Remaining Balance : " + remainingBalance );
 
-   writer.close();
+
 }
 catch(IOException a) {
 
