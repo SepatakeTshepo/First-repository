@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 public class main{
 
 public static void main (String [] args){
@@ -150,7 +151,17 @@ System.out.println ("You have Exited the Program");
 break ;
 
 case 4 :
-
+   AtomicInteger counter = new AtomicInteger(1);
+ Array.forEach(s -> {
+                        System.out.println("STUDENT " + counter.getAndIncrement());
+                        System.out.println("--------------------------------------------------");
+                        System.out.println("STUDENT ID: " + s.getId());
+                        System.out.println("STUDENT NAME: " + s.getName());
+                        System.out.println("STUDENT AGE: " + s.getAge());
+                        System.out.println("STUDENT EMAIL: " + s.getEmail());
+                        System.out.println("STUDENT COURSE: " + s.getCourse());
+                        System.out.println("--------------------------------------------------\n");
+                    });
 
 
 
