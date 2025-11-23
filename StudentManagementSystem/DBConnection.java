@@ -1,21 +1,22 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBConnection {
-    public static void main(String[] args) {
-        // 1. Database Configuration
-        String url = "jdbc:mysql://localhost:3306/"; 
-        String user = "root";
-        String password = "your_password"; // <--- PUT YOUR MYSQL PASSWORD HERE
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/student_management"; 
+    private static final String USER = "root";
+    private static final String PASSWORD = "your_password"; 
 
+    // HERE is the method you were missing!
+    // It must be 'public' and 'static' to be called as DBConnection.connect()
+    public static Connection connect() {
+        Connection conn = null;
         try {
-            // 2. Attempt Connection
-            Connection conn = DriverManager.getConnection(url, user, password);
-            System.out.println("SUCCESS! You are connected to MySQL.");
-            conn.close();
-        } catch (Exception e) {
-            System.out.println("CONNECTION FAILED.");
-            e.printStackTrace();
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            System.out.println("Connection Error: " + e.getMessage());
         }
+        return conn; 
     }
 }

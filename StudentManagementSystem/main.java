@@ -6,6 +6,7 @@ public static void main (String [] args){
 
 Scanner scan = new Scanner(System.in);
 List <Student > Array = new ArrayList <>();
+
 String Name ,Email , Course ;
 int Age ;
 int Id = 0;
@@ -78,13 +79,14 @@ System.out.println ("Enter the Student Course ");
  Course = scan.next();
 Student obj = new Student (Id , Name, Age, Email, Course);
 Array.add(obj);
-
+saveManager.main(Array);
 
 System.out.println (" Student details have beeen succesfully saved ");
 
 break ;
 
 case 2 :
+
 System.out.println (" Enter Student Id to search ");
 while (true ){
 
@@ -164,8 +166,11 @@ case 4 :
                     });
 
 
+break;
 
-}
+                  }
+
+                  
 }
 }
     
