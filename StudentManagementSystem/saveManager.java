@@ -5,7 +5,7 @@ import java.util.List;
 
 public class saveManager {
 
-    public static void main (List <Student> Array ){
+    public static void saveStudent(List <Student> Array ){
 
         String sql = "INSERT INTO student_management ( student_id ,Name ,  Age ,Email ,Course) VALUES (? , ? ,? , ? , ?)";
 
@@ -22,8 +22,8 @@ public class saveManager {
         prepared.setString (4 ,a. getEmail());
         prepared.setString (5 , a.getCourse());
      
-        prepared.executeUpdate();//sends to the datbase
-        System.out.println ("Saved " + a.getName());
+        prepared.executeUpdate();//sends to the data//base
+        System.out.println (  a.getName()+ " Is Successfully Saved ");
 
         }
 System.out.println ("All Students have been saved successfully");

@@ -6,9 +6,9 @@ public class DBConnection {
     
     private static final String URL = "jdbc:mysql://localhost:3306/student_management"; 
     private static final String USER = "root";
-    private static final String PASSWORD = "your_password"; 
+    private static final String PASSWORD = "YOUR PASSWORD HERE "; 
 
-    // HERE is the method you were missing!
+    
     // It must be 'public' and 'static' to be called as DBConnection.connect()
     public static Connection connect() {
         Connection conn = null;
